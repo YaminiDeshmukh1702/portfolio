@@ -1,4 +1,4 @@
-import { Award, Briefcase, ChevronDown, Code, Database, ExternalLink, GraduationCap, Linkedin, Mail, MapPin, Menu, Monitor, Moon, Phone, Shield, Sun, User, X } from 'lucide-react';
+import { Award, Briefcase, ChevronDown, Code, Database, ExternalLink, GraduationCap, Linkedin, Mail, MapPin, Menu, Monitor, Moon, Shield, Sun, User, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 // Import your profile image here
 import profileImage from '../src/images/YaminiWhite.png'; // **Change this path to your image's location**
@@ -482,52 +482,58 @@ const Portfolio = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className={`py-20 bg-gradient-to-r ${isDarkMode ? 'from-black via-gray-900 to-black' : 'from-gray-100 via-gray-200 to-gray-100'}`}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="text-center mb-16">
+  <section id="contact" className={`py-20 bg-gradient-to-r ${isDarkMode ? 'from-black via-gray-900 to-black' : 'from-gray-100 via-gray-200 to-gray-100'}`}>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* ... (Header content remains the same) ... */}
+        <div className="text-center mb-16">
             <h2 className={`text-4xl font-bold mb-4 bg-gradient-to-r ${theme.gradientAccent} bg-clip-text text-transparent`}>
-              Let's Connect
+                Let's Connect
             </h2>
             <div className={`w-24 h-1 bg-gradient-to-r ${theme.gradientAccent} mx-auto mb-8`}></div>
             <p className={`text-xl ${theme.textSecondary} max-w-2xl mx-auto`}>
-              I'm always open to discussing new opportunities and interesting projects. Let's build something amazing together!
+                I'm always open to discussing new opportunities and interesting projects. Let's build something amazing together!
             </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {/* Mail */}
-            <a href="mailto:yaminideshmukh1702@gmail.com" className={`bg-gradient-to-br ${theme.bgCard} backdrop-blur-sm rounded-2xl p-6 border-2 ${theme.cardBorder} ${isDarkMode ? 'hover:border-purple-400/70' : 'hover:border-blue-600/70'} transition-all duration-300 transform ${theme.hoverScale} shadow-xl ${theme.shadow}`}>
-              <Mail size={32} className={`${isDarkMode ? 'text-purple-400' : 'text-blue-600'} mx-auto mb-4`} />
-              <h3 className={`text-lg font-semibold mb-2 ${theme.textPrimary}`}>Email</h3>
-              <p className={`${theme.textSecondary} break-all`}>yaminideshmukh1702@gmail.com</p>
-            </a>
-            
-            {/* Phone */}
-            <a href="tel:8482856399" className={`bg-gradient-to-br ${theme.bgCard} backdrop-blur-sm rounded-2xl p-6 border-2 ${theme.cardBorder} ${isDarkMode ? 'hover:border-purple-400/70' : 'hover:border-blue-600/70'} transition-all duration-300 transform ${theme.hoverScale} shadow-xl ${theme.shadow}`}>
-              <Phone size={32} className={`${isDarkMode ? 'text-purple-400' : 'text-blue-600'} mx-auto mb-4`} />
-              <h3 className={`text-lg font-semibold mb-2 ${theme.textPrimary}`}>Phone</h3>
-              <p className={theme.textSecondary}>8482856399</p>
-            </a>
-            
-            {/* LinkedIn */}
-            <a href="https://www.linkedin.com/in/yamini-deshmukh-ab72b6217" target="_blank" rel="noopener noreferrer" className={`bg-gradient-to-br ${theme.bgCard} backdrop-blur-sm rounded-2xl p-6 border-2 ${theme.cardBorder} ${isDarkMode ? 'hover:border-purple-400/70' : 'hover:border-blue-600/70'} transition-all duration-300 transform ${theme.hoverScale} shadow-xl ${theme.shadow}`}>
-              <Linkedin size={32} className={`${isDarkMode ? 'text-purple-400' : 'text-blue-600'} mx-auto mb-4`} />
-              <h3 className={`text-lg font-semibold mb-2 ${theme.textPrimary}`}>LinkedIn</h3>
-              <p className={theme.textSecondary}>Connect with me</p>
-            </a>
-          </div>
+        </div>
+        
+        {/* === UPDATED GRID FOR CENTERING === */}
+        <div className="flex justify-center gap-8 mb-12">
+    
+    {/* Mail Card - Added w-full sm:w-72 for consistent size */}
+    <a 
+        href="mailto:yaminideshmukh1702@gmail.com" 
+        className={`w-full sm:w-72 bg-gradient-to-br ${theme.bgCard} backdrop-blur-sm rounded-2xl p-6 border-2 ${theme.cardBorder} ${isDarkMode ? 'hover:border-purple-400/70' : 'hover:border-blue-600/70'} transition-all duration-300 transform ${theme.hoverScale} shadow-xl ${theme.shadow}`}
+    >
+        <Mail size={32} className={`${isDarkMode ? 'text-purple-400' : 'text-blue-600'} mx-auto mb-4`} />
+        <h3 className={`text-lg font-semibold mb-2 ${theme.textPrimary}`}>Email</h3>
+        <p className={`${theme.textSecondary} break-all`}>yaminideshmukh1702@gmail.com</p>
+    </a>
+    
+    
+    {/* LinkedIn Card - Added w-full sm:w-72 for consistent size */}
+    <a 
+        href="https://www.linkedin.com/in/yamini-deshmukh-ab72b6217" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className={`w-full sm:w-72 bg-gradient-to-br ${theme.bgCard} backdrop-blur-sm rounded-2xl p-6 border-2 ${theme.cardBorder} ${isDarkMode ? 'hover:border-purple-400/70' : 'hover:border-blue-600/70'} transition-all duration-300 transform ${theme.hoverScale} shadow-xl ${theme.shadow}`}
+    >
+        <Linkedin size={32} className={`${isDarkMode ? 'text-purple-400' : 'text-blue-600'} mx-auto mb-4`} />
+        <h3 className={`text-lg font-semibold mb-2 ${theme.textPrimary}`}>LinkedIn</h3>
+        <p className={theme.textSecondary}>Connect with me</p>
+    </a>
+</div>
+        {/* === END UPDATED GRID === */}
 
-          <div className={`bg-gradient-to-br ${theme.bgCard} backdrop-blur-sm rounded-2xl p-8 border-2 ${theme.cardBorder} shadow-2xl ${isDarkMode ? 'hover:border-purple-400/50' : 'hover:border-blue-600/50'} transition-all duration-300`}>
+        {/* ... (Ready to work together block remains the same) ... */}
+        <div className={`bg-gradient-to-br ${theme.bgCard} backdrop-blur-sm rounded-2xl p-8 border-2 ${theme.cardBorder} shadow-2xl ${isDarkMode ? 'hover:border-purple-400/50' : 'hover:border-blue-600/50'} transition-all duration-300`}>
             <h3 className={`text-2xl font-bold mb-4 ${theme.textPrimary}`}>Ready to work together?</h3>
             <p className={`${theme.textSecondary} mb-6`}>Whether you have a project in mind or just want to chat about technology, I'd love to hear from you.</p>
             <a href="mailto:yaminideshmukh1702@gmail.com" className={`inline-flex items-center px-8 py-4 rounded-full transition-all duration-300 transform ${theme.hoverScale} font-semibold ${theme.buttonPrimary}`}>
-              <Mail size={20} className="mr-2" />
-              Send Message
+                <Mail size={20} className="mr-2" />
+                Send Message
             </a>
-          </div>
         </div>
-      </section>
-
+    </div>
+</section>
       {/* Footer */}
       <footer className={`py-8 ${isDarkMode ? 'bg-black border-gray-800' : 'bg-white border-gray-300'} border-t`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
