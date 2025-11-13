@@ -16,7 +16,8 @@ const Portfolio = () => {
 
   // --- New useEffect for Scroll Observation (The Fix) ---
   useEffect(() => {
-    const sections = ['home', 'about', 'experience', 'skills', 'education', 'contact'];
+    const sections =['home', 'about', 'experience', 'skills', 'projects', 'education', 'contact'];
+
     const observerOptions = {
       root: null, 
       rootMargin: '0px',
@@ -134,6 +135,52 @@ const Portfolio = () => {
     "Aptitude and Technical Training Program - Campus Credentials",
     "Smart India Hackathon 2022 - Participant"
   ];
+const projects = [
+  {
+    title: "Encryption–Decryption System",
+    description:
+      "A full-stack encryption/decryption system supporting secure payload transformations for any data type with modern UI for testing.",
+    tech: [
+      "NestJS",
+      "React",
+      "AES-256",
+      "Crypto",
+      "TypeScript",
+      "Full Stack"
+    ],
+    link: "https://github.com/your-repo-link", // update if needed
+    details: [
+      "Implemented a full-stack encryption/decryption system using NestJS and React.",
+      "Built secure APIs capable of encrypting any data type (JSON, text, numbers, binary).",
+      "Added support for both server-side encryption and client-side zero-trust encryption using user-supplied keys.",
+      "Designed a modern UI for testing payloads."
+    ]
+  },
+
+  {
+    title: "IMA Platform — Multi-Tenant Identity & Access Management",
+    description:
+      "An Auth0-style IAM backend for SaaS apps supporting multi-organization onboarding, modular services, and secure authentication.",
+    tech: [
+      "NestJS",
+      "PostgreSQL",
+      "TypeORM",
+      "JWT",
+      "Refresh Tokens",
+      "RBAC",
+      "Microservices"
+    ],
+    link: "https://github.com/your-repo-link", // update if needed
+    details: [
+      "Building a multi-tenant IAM backend with organization onboarding.",
+      "Implemented organizations, users, memberships, and JWT auth with DB-backed refresh tokens.",
+      "Designed modular NestJS architecture using PostgreSQL and TypeORM with UUID entities.",
+      "Delivered core modules: Organizations, Users, Memberships, Auth (login/refresh/logout).",
+      "Upcoming: Tenant module, full RBAC permissions, and application-level roles."
+    ]
+  }
+];
+
 
   return (
     <div className={`min-h-screen ${theme.textPrimary} ${isDarkMode ? 'bg-gradient-to-br from-black via-gray-900 to-black' : 'bg-gradient-to-br from-white via-gray-100 to-white'}`}>
@@ -428,6 +475,57 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+{/* Projects Section */}
+<section id="projects" className="py-20">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div className="text-center mb-16">
+      <h2 className={`text-4xl font-bold mb-4 bg-gradient-to-r ${theme.gradientAccent} bg-clip-text text-transparent`}>
+        Projects
+      </h2>
+      <div className={`w-24 h-1 bg-gradient-to-r ${theme.gradientAccent} mx-auto mb-8`}></div>
+    </div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {projects.map((project, index) => (
+        <div key={index}
+          className={`bg-gradient-to-br ${theme.bgCard} backdrop-blur-sm rounded-2xl p-6 border-2 ${theme.cardBorder} 
+          transform hover:scale-[1.02] transition-all duration-300 shadow-xl
+          ${isDarkMode ? 'hover:border-purple-400/60 hover:shadow-purple-500/20' : 'hover:border-blue-600/60 hover:shadow-blue-500/20'}`}>
+          
+          <h3 className={`text-xl font-bold mb-3 ${theme.textPrimary}`}>
+            {project.title}
+          </h3>
+
+          <p className={`${theme.textSecondary} text-sm mb-4`}>
+            {project.description}
+          </p>
+
+          {/* Tech Stack */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tech.map((t, i) => (
+              <span key={i}
+                className={`px-3 py-1 rounded-full text-xs border backdrop-blur-sm
+                ${isDarkMode ? 'bg-gray-800 text-white/70 border-gray-700' : 'bg-gray-200 text-slate-700 border-gray-300'}
+                `}>
+                {t}
+              </span>
+            ))}
+          </div>
+
+          {/* Project Link
+          <a href={project.link} 
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center text-sm font-semibold bg-gradient-to-r ${theme.gradientAccent} 
+            text-white px-4 py-2 rounded-full transition-all duration-300 ${theme.hoverScale}`}>
+            View Project <ExternalLink size={16} className="ml-2" />
+          </a> */}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Education & Certificates */}
       <section id="education" className="py-20">
