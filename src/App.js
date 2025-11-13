@@ -195,7 +195,7 @@ const projects = [
             <div className="flex items-center space-x-4">
               {/* Desktop Menu */}
               <div className="hidden md:flex space-x-8">
-                {['home', 'about', 'experience', 'skills', 'education', 'contact'].map((item) => (
+                {['home', 'about', 'experience', 'skills', 'projects', 'education', 'contact'].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item)}
@@ -234,7 +234,7 @@ const projects = [
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div className={`md:hidden ${isDarkMode ? 'bg-black/80 border-gray-800' : 'bg-white/80 border-gray-300'} backdrop-blur-lg rounded-lg mt-2 p-4 border`}>
-              {['home', 'about', 'experience', 'skills', 'education', 'contact'].map((item) => (
+              {['home', 'about', 'experience', 'skills', 'projects', 'education', 'contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
